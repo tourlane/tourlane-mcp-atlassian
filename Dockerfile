@@ -46,6 +46,14 @@ COPY --from=uv --chown=app:app /app/.venv /app/.venv
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"
 
+# Set default environment variables for Railway
+ENV TRANSPORT=sse
+ENV HOST=0.0.0.0
+ENV PORT=8000
+
+# Expose the port that the application runs on
+EXPOSE 8000
+
 # For minimal OAuth setup without environment variables, use:
 # docker run -e ATLASSIAN_OAUTH_ENABLE=true -p 8000:8000 your-image
 # Then provide authentication via headers:
