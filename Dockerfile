@@ -37,7 +37,7 @@ COPY --from=uv --chown=app:app /app/src /app/src
 ENV PATH="/app/.venv/bin:$PATH"
 
 # Set default environment variables for Railway
-ENV TRANSPORT=sse
+ENV TRANSPORT=streamable-http
 ENV HOST=0.0.0.0
 ENV PORT=8000
 ENV MCP_LOGGING_STDOUT=true
@@ -52,4 +52,4 @@ EXPOSE 8000
 # Authorization: Bearer <your_oauth_token>
 # X-Atlassian-Cloud-Id: <your_cloud_id>
 
-ENTRYPOINT ["mcp-atlassian", "--transport", "sse", "--host", "0.0.0.0", "--port", "8000", "--read-only", "-vv"]
+ENTRYPOINT ["mcp-atlassian", "--transport", "streamable-http", "--host", "0.0.0.0", "--port", "8000", "--read-only", "-vv"]

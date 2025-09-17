@@ -1,6 +1,6 @@
 # Smithery.ai configuration for mcp-atlassian
 startCommand:
-  type: stdio # Specifies the server communicates over standard input/output
+  type: streamable-http # Specifies the server communicates over standard input/output
   configSchema:
     # JSON Schema defining the configuration options users need to provide
     type: object
