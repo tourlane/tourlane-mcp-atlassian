@@ -14,7 +14,7 @@ value = "streamable-http"
 
 [[deploy.envVars]]
 name = "HOST"
-value = "0.0.0.0"
+value = "::"
 
 # Enable minimal logging to stdout for Railway
 [[deploy.envVars]]
