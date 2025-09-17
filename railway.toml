@@ -2,7 +2,6 @@
 builder = "dockerfile"
 
 [deploy]
-startCommand = "mcp-atlassian --transport streamable-http --host 0.0.0.0 --read-only -vv"
 healthcheckPath = "/healthz"
 healthcheckTimeout = 300
 restartPolicyType = "always"
