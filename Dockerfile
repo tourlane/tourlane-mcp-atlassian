@@ -39,11 +39,11 @@ ENV PATH="/app/.venv/bin:$PATH"
 # Set default environment variables for Railway
 ENV TRANSPORT=streamable-http
 ENV HOST=0.0.0.0
-ENV PORT=8000
 ENV MCP_LOGGING_STDOUT=true
 ENV MCP_VERBOSE=true
 
-# Expose the port that the application runs on
+# Railway will set PORT automatically - don't hardcode it
+# Expose port 8000 as default, but app will use Railway's PORT env var
 EXPOSE 8000
 
 # For minimal OAuth setup without environment variables, use:
@@ -52,4 +52,4 @@ EXPOSE 8000
 # Authorization: Bearer <your_oauth_token>
 # X-Atlassian-Cloud-Id: <your_cloud_id>
 
-ENTRYPOINT ["mcp-atlassian", "--transport", "streamable-http", "--host", "0.0.0.0", "--port", "8000", "--read-only", "-vv"]
+ENTRYPOINT ["mcp-atlassian", "--transport", "streamable-http", "--host", "0.0.0.0", "--read-only", "-vv"]

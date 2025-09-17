@@ -2,16 +2,12 @@
 builder = "dockerfile"
 
 [deploy]
-startCommand = "mcp-atlassian --transport streamable-http --host 0.0.0.0 --port 8000 --read-only -vv"
+startCommand = "mcp-atlassian --transport streamable-http --host 0.0.0.0 --read-only -vv"
 healthcheckPath = "/healthz"
 healthcheckTimeout = 300
 restartPolicyType = "always"
 
-# Railway will automatically expose the port from EXPOSE instruction in Dockerfile
-# But we can be explicit about it
-[[deploy.envVars]]
-name = "PORT"
-value = "8000"
+# Don't set PORT - Railway will provide it automatically
 
 [[deploy.envVars]]
 name = "TRANSPORT"
