@@ -52,4 +52,4 @@ EXPOSE 8000
 # Authorization: Bearer <your_oauth_token>
 # X-Atlassian-Cloud-Id: <your_cloud_id>
 
-ENTRYPOINT ["mcp-atlassian", "--transport", "streamable-http", "--host", "0.0.0.0", "--read-only", "-vv"]
+ENTRYPOINT ["mcp-atlassian", "--transport", "streamable-http", "--host", "::", "--read-only", "-vv"]
