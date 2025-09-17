@@ -38,7 +38,7 @@ ENV PATH="/app/.venv/bin:$PATH"
 
 # Set default environment variables for Railway
 ENV TRANSPORT=streamable-http
-ENV HOST=0.0.0.0
+ENV HOST=::
 ENV MCP_LOGGING_STDOUT=true
 ENV MCP_VERBOSE=true
 
