@@ -40,6 +40,8 @@ ENV PATH="/app/.venv/bin:$PATH"
 ENV TRANSPORT=sse
 ENV HOST=0.0.0.0
 ENV PORT=8000
+ENV MCP_LOGGING_STDOUT=true
+ENV MCP_VERBOSE=true
 
 # Expose the port that the application runs on
 EXPOSE 8000
@@ -50,4 +52,4 @@ EXPOSE 8000
 # Authorization: Bearer <your_oauth_token>
 # X-Atlassian-Cloud-Id: <your_cloud_id>
 
-ENTRYPOINT ["mcp-atlassian"]
+ENTRYPOINT ["mcp-atlassian", "--transport", "sse", "--host", "0.0.0.0", "--port", "8000", "--read-only", "-vv"]

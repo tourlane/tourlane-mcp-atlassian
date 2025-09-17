@@ -2,7 +2,7 @@
 builder = "dockerfile"
 
 [deploy]
-startCommand = "mcp-atlassian"
+startCommand = "mcp-atlassian --transport sse --host 0.0.0.0 --port 8000 --read-only -vv"
 healthcheckPath = "/healthz"
 healthcheckTimeout = 300
 restartPolicyType = "always"
@@ -20,3 +20,13 @@ value = "sse"
 [[deploy.envVars]]
 name = "HOST"
 value = "0.0.0.0"
+
+# Enable minimal logging to stdout for Railway
+[[deploy.envVars]]
+name = "MCP_LOGGING_STDOUT"
+value = "true"
+
+# Set minimal verbosity
+[[deploy.envVars]]
+name = "MCP_VERBOSE"
+value = "true"
